@@ -1,3 +1,9 @@
+<?php
+if ($this->session->userdata('akses') == 1){
+    
+}
+?>
+
 <body id="page-top">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
