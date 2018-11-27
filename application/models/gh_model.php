@@ -3,7 +3,7 @@ class gh_model extends CI_Model{
     function __construct(){
         parent::__construct();
     }
-
+ 
     function count_new_project(){
         $sql = "SELECT ProjectID, COUNT(ProjectID) as semua FROM project WHERE ProjectTypeID = 'New'";
         $result = $this->db->query($sql);
@@ -106,7 +106,7 @@ class gh_model extends CI_Model{
 
 
     function new_project(){
-        $sql = "SELECT * as semua FROM project WHERE ProjectTypeID = 'New'";
+        $sql = "SELECT * FROM project WHERE ProjectTypeID = 'New'";
         $result = $this->db->query($sql);
         return $result->result_array();
     }
@@ -118,19 +118,75 @@ class gh_model extends CI_Model{
     }
 
     function new_done(){
-        $sql = "SELECT t.* as done FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and t.FilePT IS NOT NULL and t.FileSIT IS NOT NULL AND t.FileUAT IS NOT NULL AND t.FileSAT IS NOT NULL AND t.FilePTR IS NOT NULL AND p.ProjectTypeID = 'New'";
+        $sql = "SELECT t.*  FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and t.FilePT IS NOT NULL and t.FileSIT IS NOT NULL AND t.FileUAT IS NOT NULL AND t.FileSAT IS NOT NULL AND t.FilePTR IS NOT NULL AND p.ProjectTypeID = 'New'";
         $result = $this->db->query($sql);
         return $result->result_array();
     }
 
     function new_ongoing(){
-        $sql = "SELECT t.* as ongoing FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and (t.FilePT IS NULL OR t.FileSIT IS NULL OR t.FileUAT IS NULL OR t.FileSAT IS NULL OR t.FilePTR IS NULL) AND p.ProjectTypeID = 'New'";
+        $sql = "SELECT t.*  FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and (t.FilePT IS NULL OR t.FileSIT IS NULL OR t.FileUAT IS NULL OR t.FileSAT IS NULL OR t.FilePTR IS NULL) AND p.ProjectTypeID = 'New'";
         $result = $this->db->query($sql);
         return $result->result_array();
     }
 
     function new_delay(){
-        $sql = "SELECT t.* as delay FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and (t.FilePT IS NULL OR t.FileSIT IS NULL OR t.FileUAT IS NULL OR t.FileSAT IS NULL OR t.FilePTR IS NULL) and t.Deadline <= CURDATE() AND p.ProjectTypeID = 'New'";
+        $sql = "SELECT t.*  FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and (t.FilePT IS NULL OR t.FileSIT IS NULL OR t.FileUAT IS NULL OR t.FileSAT IS NULL OR t.FilePTR IS NULL) and t.Deadline <= CURDATE() AND p.ProjectTypeID = 'New'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+
+
+    function cr_project(){
+        $sql = "SELECT *  FROM project WHERE ProjectTypeID = 'CR'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+    function cr_queue(){
+        $sql = "SELECT *  FROM project WHERE BRD IS NOT NULL AND Flag=0 AND ProjectTypeID = 'CR'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+    function cr_done(){
+        $sql = "SELECT t.*  FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and t.FilePT IS NOT NULL and t.FileSIT IS NOT NULL AND t.FileUAT IS NOT NULL AND t.FileSAT IS NOT NULL AND t.FilePTR IS NOT NULL AND p.ProjectTypeID = 'CR'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+    function cr_ongoing(){
+        $sql = "SELECT t.*  FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and (t.FilePT IS NULL OR t.FileSIT IS NULL OR t.FileUAT IS NULL OR t.FileSAT IS NULL OR t.FilePTR IS NULL) AND p.ProjectTypeID = 'CR'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+    function cr_delay(){
+        $sql = "SELECT t.*  FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and (t.FilePT IS NULL OR t.FileSIT IS NULL OR t.FileUAT IS NULL OR t.FileSAT IS NULL OR t.FilePTR IS NULL) and t.Deadline <= CURDATE() AND p.ProjectTypeID = 'CR'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+    function sr_project(){
+        $sql = "SELECT *  FROM project WHERE ProjectTypeID = 'SR'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+    function sr_done(){
+        $sql = "SELECT t.*  FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and t.FilePT IS NOT NULL and t.FileSIT IS NOT NULL AND t.FileUAT IS NOT NULL AND t.FileSAT IS NOT NULL AND t.FilePTR IS NOT NULL AND p.ProjectTypeID = 'SR'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+    function ir_project(){
+        $sql = "SELECT *  FROM project WHERE ProjectTypeID = 'IR'";
+        $result = $this->db->query($sql);
+        return $result->result_array();
+    }
+
+    function ir_done(){
+        $sql = "SELECT t.* FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and t.FilePT IS NOT NULL and t.FileSIT IS NOT NULL AND t.FileUAT IS NOT NULL AND t.FileSAT IS NOT NULL AND t.FilePTR IS NOT NULL AND p.ProjectTypeID = 'IR'";
         $result = $this->db->query($sql);
         return $result->result_array();
     }

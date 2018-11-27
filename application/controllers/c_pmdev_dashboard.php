@@ -15,8 +15,9 @@ class c_pmdev_dashboard extends CI_Controller {
 
 	public function index()
 	{
+    $pmdev=$this->session->userdata('ses_id');
     $data=array(
-			'data' => $this->pmdev_model->show_project()
+			'data' => $this->pmdev_model->show_project($pmdev)
 		);
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar');

@@ -61,7 +61,7 @@
                                     <div class="dashboard-card-hero" style="padding-right: 5%; padding-left: 5%"><?php echo $semua ?></div>
                                     <div class="card-text-main">Total Projects</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="tables.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_new_project'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -76,7 +76,7 @@
                                     <div class="card-text-header"><?php echo $ongoing?></div>
                                     <div class="card-text-main">Projects On Going</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="project-go.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_new_ongoing'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -93,7 +93,7 @@
                                     <div class="card-text-header"><?php echo $delay ?></div>
                                     <div class="card-text-main">Projects Delayed</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="project-delay.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_new_delay'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -110,7 +110,7 @@
                                     <div class="card-text-header"><?php echo $queue ?></div>
                                     <div class="card-text-main">Projects On Queue</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="project-queue.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_new_queue'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -127,7 +127,7 @@
                                     <div class="card-text-header"><?php echo $done?></div>
                                     <div class="card-text-main">Projects Done</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="project-passed.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_new_done'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -154,7 +154,7 @@
                                     <div class="dashboard-card-hero" style="padding-right: 5%; padding-left: 5%"><?php echo $semua_cr ?></div>
                                     <div class="card-text-main">Total Requests</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="tables.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_cr_project'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -170,7 +170,7 @@
                                     <div class="card-text-header"><?php echo $ongoing_cr ?></div>
                                     <div class="card-text-main">Requests On Going</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="project-go.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_cr_ongoing'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -187,7 +187,7 @@
                                     <div class="card-text-header"><?php echo $delay_cr ?></div>
                                     <div class="card-text-main">Requests Delayed</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="project-delay.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_cr_delay'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -204,7 +204,7 @@
                                     <div class="card-text-header"><?php echo $queue_cr ?></div>
                                     <div class="card-text-main">Requests On Queue</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="project-queue.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_cr_queue'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -221,7 +221,7 @@
                                     <div class="card-text-header"><?php echo $done_cr ?></div>
                                     <div class="card-text-main">Requests Done</div>
                                 </div>
-                                <a class="card-footer text-black clearfix small z-1" href="project-passed.html">
+                                <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_cr_done'?>">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -250,7 +250,7 @@
                                             <div class="card-text-header"><?php echo $semua_sr?></div>
                                             <div class="card-text-main">Requests In </div>
                                         </div>
-                                        <a class="card-footer text-black clearfix small z-1" href="tables.html">
+                                        <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_sr_project'?>">
                                             <span class="float-left">View Details</span>
                                             <span class="float-right">
                                                 <i class="fas fa-angle-right"></i>
@@ -267,7 +267,7 @@
                                             <div class="card-text-header"><?php echo $done_sr?></div>
                                             <div class="card-text-main">Requests Done</div>
                                         </div>
-                                        <a class="card-footer text-black clearfix small z-1" href="project-passed.html">
+                                        <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_sr_done'?>">
                                             <span class="float-left">View Details</span>
                                             <span class="float-right">
                                                 <i class="fas fa-angle-right"></i>
@@ -298,7 +298,7 @@
                                             <div class="card-text-header"><?php echo $semua_ir ?></div>
                                             <div class="card-text-main">Requests In </div>
                                         </div>
-                                        <a class="card-footer text-black clearfix small z-1" href="tables.html">
+                                        <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_ir_project'?>">
                                             <span class="float-left">View Details</span>
                                             <span class="float-right">
                                                 <i class="fas fa-angle-right"></i>
@@ -315,7 +315,7 @@
                                             <div class="card-text-header"><?php echo $done_ir?></div>
                                             <div class="card-text-main">Requests Done</div>
                                         </div>
-                                        <a class="card-footer text-black clearfix small z-1" href="project-passed.html">
+                                        <a class="card-footer text-black clearfix small z-1" href="<?php echo base_url().'index.php/c_gh/list_ir_done'?>">
                                             <span class="float-left">View Details</span>
                                             <span class="float-right">
                                                 <i class="fas fa-angle-right"></i>

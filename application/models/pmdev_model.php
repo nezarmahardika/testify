@@ -4,9 +4,12 @@ class pmdev_model extends CI_Model{
         parent::__construct();
     }
 
-    function show_project(){
-      $sql = "SELECT * FROM project WHERE Flag=0";
-      $query = $this->db->query($sql);
+    function show_project($pmdev){
+      $this->db->select('*');
+      $this->db->from('project');
+      $this->db->where('PMDev',$pmdev);
+      $this->db->where('Flag',0);
+      $query = $this->db->get();
       return $query->result_array();
     }
 

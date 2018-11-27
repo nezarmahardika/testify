@@ -54,9 +54,10 @@ class Page extends CI_Controller{
     }
 
     if ($this->session->userdata('akses')=='4') {
+      $pmdev=$this->session->userdata('ses_id');
       $data=array(
-  			'data' => $this->pmdev_model->show_project()
-  		);
+        'data' => $this->pmdev_model->show_project($pmdev)
+      );
       $this->load->view('layout/header');
       $this->load->view('layout/sidebar');
       $this->load->view('PMDEV/pmdev_dashboard',$data);
