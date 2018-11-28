@@ -65,6 +65,11 @@ class Login extends CI_Controller{
 								$this->session->set_userdata('ses_id',$data['UserID']);
 		            $this->session->set_userdata('ses_nama',$data['UserName']);
 		            redirect('page');
+		         }elseif ($data['RoleID']=='R10'){ //akses PMDev
+		            $this->session->set_userdata('akses','10');
+								$this->session->set_userdata('ses_id',$data['UserID']);
+		            $this->session->set_userdata('ses_nama',$data['UserName']);
+		            redirect('page');
 		         }
 
         }else{  // jika username dan password tidak ditemukan atau salah

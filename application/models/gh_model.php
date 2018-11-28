@@ -3,7 +3,7 @@ class gh_model extends CI_Model{
     function __construct(){
         parent::__construct();
     }
- 
+
     function count_new_project(){
         $sql = "SELECT ProjectID, COUNT(ProjectID) as semua FROM project WHERE ProjectTypeID = 'New'";
         $result = $this->db->query($sql);
@@ -189,6 +189,14 @@ class gh_model extends CI_Model{
         $sql = "SELECT t.* FROM testorder t, project p WHERE t.ProjectID=p.ProjectID and t.FilePT IS NOT NULL and t.FileSIT IS NOT NULL AND t.FileUAT IS NOT NULL AND t.FileSAT IS NOT NULL AND t.FilePTR IS NOT NULL AND p.ProjectTypeID = 'IR'";
         $result = $this->db->query($sql);
         return $result->result_array();
+    }
+
+    function detil_project($detil){
+      $this->db->select('*');
+      $this->db->from('project');
+      $this->db->where('project.ProjectID',$detil);
+      $query = $this->db->get();
+      return $query->result_array();
     }
 
 }

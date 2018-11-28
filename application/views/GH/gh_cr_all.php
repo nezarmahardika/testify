@@ -18,6 +18,7 @@
 					<th>BRD</th>
 					<th>FSD</th>
 					<th>TSD</th>
+					<!-- <th>Action</th> -->
 				</tr>
 			</thead>
 			<tbody>
@@ -45,22 +46,34 @@
 					}else {
 						echo "sudah";
 					}?></td>
+					<!-- <td>
+						<a
+    					href="javascript:;"
+    					data-projectid="<?php echo $dt['ProjectID'] ?>"
+    					data-projectname="<?php echo $dt['ProjectName'] ?>"
+    					data-projecttype="<?php echo $dt['ProjectTypeID'] ?>"
+    					data-description="<?php echo $dt['ProjectDescription'] ?>"
+							data-estimation="<?php echo $dt['ProjectEstimation'] ?>"
+							data-toggle="modal" data-target="#detil-data" class="detil">
+    					<button  data-toggle="modal" data-target="#ubah-data" class="btn btn-info">Edit</button>
+						</a><br>
+					</td> -->
 				</tr>
 				<?php } ?>
 			</tbody>
 		</table>
 		<script type="text/javascript">
-            $(document).on("click", ".assign", function () {
+            $(document).on("click", ".detil", function () {
                  var adminid = $(this).data('projectid');
                  $(".modal-body #ProjectID").val( adminid );
-                 $('#assign-project').modal('show');
+                 $('#detil-data').modal('show');
             });
             </script>
 
 	</div>
 
 	<!-- Modal Ubah -->
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="assign-project" class="modal fade">
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="detil-data" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

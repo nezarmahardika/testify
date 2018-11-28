@@ -88,6 +88,7 @@
                           <option value="R07">UAT Lead</option>
                           <option value="R08">SAT Lead</option>
                           <option value="R09">PTR Lead</option>
+                          <option value="R10">Tester</option>
                       </select>
                       <!-- <input class="form-control" name="RoleID" placeholder="Role" type="text" value="<?php echo set_value('RoleID'); ?>" /> -->
                       <span class="text-danger"><?php echo form_error('RoleID'); ?></span>

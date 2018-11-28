@@ -99,7 +99,13 @@ class c_pmtest_dashboard extends CI_Controller {
     );
     $this->pmtest_model->edit_testorder($data,$id);
     $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Test lead berhasil di-assign <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-    redirect('c_pmtest_dashboard/show_ongoing');
+    redirect('c_pmtest_dashboard/tester');
   }
+
+  function tester()
+  {
+    $this->load->view('PMTEST/tester');
+  }
+
 
 }
