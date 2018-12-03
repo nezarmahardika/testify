@@ -118,6 +118,11 @@ class Page extends CI_Controller{
       $this->load->view('PTRLEAD/ptrlead_dashboard',$data);
       $this->load->view('layout/footer');
     }
+
+    if ($this->session->userdata('akses')=='10') {
+
+      $this->load->view('tester_screen');
+    }
   }
 
   function data_mahasiswa(){

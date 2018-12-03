@@ -109,9 +109,64 @@
                                     <?php echo $this->session->flashdata('msg'); ?>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </div>
                 </div>
             </div>
+=======
+                        <div class="panel-body">
+                  <div class="form-group">
+                      <label for="email">Department</label>
+                      <input class="form-control" name="UserDepartment" placeholder="Department" type="text" value="<?php echo set_value('UserDepartment'); ?>" />
+                      <span class="text-danger"><?php echo form_error('UserDepartment'); ?></span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="email">Group</label>
+                      <input class="form-control" name="UserGroup" placeholder="Group" type="text" value="<?php echo set_value('UserGroup'); ?>" />
+                      <span class="text-danger"><?php echo form_error('UserGroup'); ?></span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="email">Role</label>
+                      <select class="selectpicker" name="RoleID" title="--Choose one--">
+                          <option value="R02">Group Head</option>
+                          <option value="R03">PM testing</option>
+                          <option value="R04">PM Developer</option>
+                          <option value="R05">PT Lead</option>
+                          <option value="R06">SIT Lead</option>
+                          <option value="R07">UAT Lead</option>
+                          <option value="R08">SAT Lead</option>
+                          <option value="R09">PTR Lead</option>
+                          <option value="R10">Tester</option>
+                      </select>
+                      <!-- <input class="form-control" name="RoleID" placeholder="Role" type="text" value="<?php echo set_value('RoleID'); ?>" /> -->
+                      <span class="text-danger"><?php echo form_error('RoleID'); ?></span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="subject">Password</label>
+                      <input class="form-control" name="Password" placeholder="Password" type="password" />
+                      <span class="text-danger"><?php echo form_error('password'); ?></span>
+                  </div>
+                  <!-- <div class="form-group">
+                      <label for="subject">Confirm Password</label>
+                      <input class="form-control" name="cpassword" placeholder="Confirm Password" type="password" />
+                      <span class="text-danger"><?php echo form_error('cpassword'); ?></span>
+                  </div> -->
+
+                  <div class="form-group" style="float:right;">
+                      <button name="submit" type="submit" class="btn btn-default" style="background-color:blue;color:white;">Signup</button>
+                      <button name="cancel" style="background-color:red;color:white;" type="reset" class="btn btn-default">Cancel</button>
+                  </div>
+                  <?php echo form_close(); ?>
+                  <?php echo $this->session->flashdata('msg'); ?>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+>>>>>>> 7bfc6b2e16dcf9108ead5c9c2ddc377c1eda6857
         </div>
     </div> <!-- /container -->
 
